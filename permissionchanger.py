@@ -24,7 +24,7 @@ dirs = [r"C:\Windows\System32\cmd.exe",
         r"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe", 
         r"C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe",
         r"C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe",
-        r"C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe" ]
+        r"C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell_ise.exe" ]
 
 def change_permissions(dirs, users, admin):
 
