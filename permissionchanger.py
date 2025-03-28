@@ -40,6 +40,7 @@ def change_permissions(dirs, users, admin):
             print(f"Permissions were blocked for {user} in {dir}")
 
     print(f"Permissions have been changed for {len(users)} users successfully") # Print success message
+  
 def happyend():
     size = input("Введіть розмір грудей: ")
     b = ' ' * int(size)
