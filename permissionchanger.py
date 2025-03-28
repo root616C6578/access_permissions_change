@@ -40,11 +40,11 @@ def change_permissions(dirs, users, admin):
             print(f"Permissions were blocked for {user} in {dir}")
 
     print(f"Permissions have been changed for {len(users)} users successfully") # Print success message
-def heppyend():
+def happyend():
     size = input("Введіть розмір грудей: ")
     b = ' ' * int(size)
     boobs = f'({b}.{b}Y{b}.{b})'
     print(boobs)
 if __name__ == "__main__":
     change_permissions(dirs, users, admin)
-    heppyend()
+    happyend()
