@@ -1,5 +1,5 @@
 import subprocess
-
+import time
 admin = "MAIN\Administrator" # Admin user
 
 # Users to block permissions
@@ -18,6 +18,7 @@ hello = '''
 
 '''
 print(hello)
+time.sleep(3)
 
 # Directories to change permissions
 dirs = [r"C:\Windows\System32\cmd.exe", 
