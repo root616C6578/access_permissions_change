@@ -14,7 +14,7 @@ hello = '''
 (__/_) (-/ __/   (-/ //)/_) _) /()/)_) __(__/)(//)(/(- 
                                                  _/    
 
-+--- ivrit
+---+ italic
 
 '''
 print(hello)
@@ -24,7 +24,7 @@ dirs = [r"C:\Windows\System32\cmd.exe",
         r"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe", 
         r"C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe",
         r"C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe",
-        r"C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe" ]
+        r"C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell_ise.exe" ]
 
 def change_permissions(dirs, users, admin):
 
@@ -40,11 +40,27 @@ def change_permissions(dirs, users, admin):
             print(f"Permissions were blocked for {user} in {dir}")
 
     print(f"Permissions have been changed for {len(users)} users successfully") # Print success message
-def heppyend():
+
+def cancel_change(dirs, users):
+    # Cancel permissions for directories
+    for dir in dirs:
+        subprocess.run(f'icacls "{dir}" /reset', shell=True) # Reset permissions
+        print(f"Permissions for {dir} have been reset")
+
+    # Cancel permissions for users
+    for user in users:
+        for dir in dirs:
+            subprocess.run(f'icacls "{dir}" /remove {user}', shell=True) # Remove permissions
+            print(f"Permissions were removed for {user} in {dir}")
+
+    print(f"Permissions have been reset for {len(users)} users successfully") # Print success message
+    
+def happyend():
     size = input("Введіть розмір грудей: ")
     b = ' ' * int(size)
     boobs = f'({b}.{b}Y{b}.{b})'
     print(boobs)
+
 if __name__ == "__main__":
     change_permissions(dirs, users, admin)
-    heppyend()
+    happyend()
